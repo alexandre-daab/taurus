@@ -1,1 +1,5 @@
 node_modules
+taurus-api\node_modules
+taurus-api\dist
+taurus-api\.env
+tauros_app\node_modules
