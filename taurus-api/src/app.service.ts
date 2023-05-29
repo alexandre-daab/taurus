@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { UserModel } from './user';
-import { Lixo } from './lixo/lixo';
 
 const userModel = new UserModel();
 
@@ -17,8 +16,6 @@ export class AppService {
 
   async getOla(dados: Alexa): Promise<Alexa> {
     await userModel.create();
-    const lixo = new Lixo();
-    lixo.retornaLixo();
     return { nome: dados.nome, idade: dados.idade };
   }
 }
