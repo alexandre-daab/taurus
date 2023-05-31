@@ -12,11 +12,11 @@ export class UserModel {
     console.log(allUsers);
   }
 
-  async create() {
+  async create(email: string, name: string) {
     await this.prisma.user.create({
       data: {
-        name: 'Alice',
-        email: 'alice1@prisma.io',
+        name,
+        email,
         posts: {
           create: { title: 'Hello World' },
         },
@@ -25,5 +25,7 @@ export class UserModel {
         },
       },
     });
+
+    return { email, name };
   }
 }

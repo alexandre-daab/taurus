@@ -4,18 +4,18 @@ import { UserModel } from './user';
 const userModel = new UserModel();
 
 export interface Alexa {
-  nome: string;
-  idade: Number;
+  email: string;
+  name: string;
 }
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getHello(key: string): string {
+    return key;
   }
 
-  async getOla(dados: Alexa): Promise<Alexa> {
-    await userModel.create();
-    return { nome: dados.nome, idade: dados.idade };
+  async createUser(dados: Alexa): Promise<Alexa> {
+    await userModel.create(dados.email, dados.name);
+    return { email: dados.email, name: dados.name };
   }
 }
