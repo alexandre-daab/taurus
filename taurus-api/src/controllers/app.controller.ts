@@ -8,7 +8,7 @@ import {
   HttpStatus,
   Header,
 } from '@nestjs/common';
-import { AppService, Alexa } from './app.service';
+import { AppService, Alexa } from '../services/app.service';
 import { Request, Response } from 'express';
 
 @Controller('api/v1.0')
